@@ -1,0 +1,20 @@
+.navbar {
+    padding: 15px 0;
+    outline: 2px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} 
+.link {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 15px;
+    color: red;
+    border: 1px solid red;
+    background-color: #fff;
+
+    &.active {
+        background-color: red;
+        color: #fff;
+    }
+}

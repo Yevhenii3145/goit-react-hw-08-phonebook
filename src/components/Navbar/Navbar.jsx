@@ -1,0 +1,25 @@
+import { NavLink } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import styles from "./navbar.module.scss";
+import NavbarAuth from "./NavbarAuth/NavbarAuth";
+import UserMenu from "./NavbarUser/UserMenu";
+
+import useAuth from "shared/hooks/useAuth";
+
+const getClassName = ({isActive}) => {
+    return isActive ? `${styles.link} ${styles.active}` : styles.link;
+}
+
+const Navbar = () => {
+    const isLogin = useAuth();
+
+    return (
+            <div className={styles.navbar}>
+                <Link to="/">Logo</Link>
+                {isLogin && <NavLink className={getClassName} to="/contacts">My Contacts</NavLink>}
+                {isLogin ? <UserMenu /> : <NavbarAuth trowStyle={getClassName} />}
+            </div>
+    )
+}
+
+export default Navbar;
