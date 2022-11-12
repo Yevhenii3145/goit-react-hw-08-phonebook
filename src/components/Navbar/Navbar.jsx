@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import styles from "./navbar.module.scss";
 import NavbarAuth from "./NavbarAuth/NavbarAuth";
 import UserMenu from "./NavbarUser/UserMenu";
@@ -15,7 +15,7 @@ const Navbar = () => {
 
     return (
             <div className={styles.navbar}>
-                <Link to="/">Logo</Link>
+                <NavLink className={getClassName} to="/">Logo</NavLink>
                 {isLogin && <NavLink className={getClassName} to="/contacts">My Contacts</NavLink>}
                 {isLogin ? <UserMenu /> : <NavbarAuth trowStyle={getClassName} />}
             </div>

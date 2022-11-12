@@ -51,3 +51,20 @@ export const logout = createAsyncThunk(
     }
 )
 
+export const  current = createAsyncThunk(
+    "auth/current",
+    async(_,{rejectWithValue, getState}) => {
+        try{
+            const {auth} = getState();
+            const result = await api.getCurrentUser(auth.token);
+            console.log("ffff0000000000",result)
+            return result;
+        } catch({response}) {
+            const error = {
+                status: response.status,
+                message: response.data.message,
+            }
+            return rejectWithValue(error);
+        }
+    }
+)

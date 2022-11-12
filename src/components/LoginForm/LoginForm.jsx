@@ -12,15 +12,15 @@ import fields from "./fields";
 const LoginForm = ({onSubmit}) => {
     const {state, handleChange, handleSubmit} = useForm({initialState, onSubmit});
 
-    const nameId = useMemo(()=> nanoid(), []);
+    // const nameId = useMemo(()=> nanoid(), []);
     const emailId = useMemo(()=> nanoid(), []);
     const passwordId = useMemo(()=> nanoid(), []);
 
-    const {name,email, password} = state;
+    const {email, password} = state;
 
     return (
         <form onSubmit={handleSubmit}>
-            <TextField id={nameId} value={name} handleChange={handleChange} {...fields.name} />
+            {/* <TextField id={nameId} value={name} handleChange={handleChange} {...fields.name} /> */}
             <TextField id={emailId} value={email} handleChange={handleChange} {...fields.email} />
             <TextField id={passwordId} value={password} handleChange={handleChange} {...fields.password} />
             <button>Login</button>
