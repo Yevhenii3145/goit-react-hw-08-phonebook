@@ -1,19 +1,17 @@
 import { lazy, Suspense } from "react";
 import {Routes, Route} from "react-router-dom";
+import { Progress } from '@chakra-ui/react';
 import PrivateRoute from "components/PrivateRoute/PrivateRoute";
 import PublicRoute from "components/PublicRoute/PublicRoute";
-// import RegisterPage from "./pages/RegisterPage/RegisterPage"
-// import LoginPage from "./pages/LoginPage/LoginPage"
-// import NotFoundPage from "./pages/NotFoundPage/NotFoundPage"
 
-const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'))
-const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage'))
-const MyContactsPage = lazy(() => import('./pages/MyContactsPage/MyContactsPage'))
-const NotFoundPage = lazy(() => import('./pages/NotFoundPage/NotFoundPage'))
+const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
+const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage'));
+const MyContactsPage = lazy(() => import('./pages/MyContactsPage/MyContactsPage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage/NotFoundPage'));
  
 const UserRoutes = () => {
     return (
-        <Suspense fallback={<p>...Load page</p>}>
+        <Suspense fallback={<Progress size='xs' isIndeterminate />}>
             <Routes>
                 <Route element={<PublicRoute />}>
                     <Route path="/register" element={<RegisterPage />} />
@@ -25,7 +23,7 @@ const UserRoutes = () => {
                 <Route path="*" element={<NotFoundPage />} />
             </Routes>
         </Suspense>
-    )
-}
+    );
+};
 
 export default UserRoutes;

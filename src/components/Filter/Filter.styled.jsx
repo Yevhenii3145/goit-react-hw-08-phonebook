@@ -2,10 +2,10 @@ import styled from '@emotion/styled'
 
 export const FilterBox = styled.div`
     position:absolute;
-    top:58px;
+    top: 80px;
     right: 0px;
     outline: 2px solid green;
-    height:330px;
+    height:280px;
     width: 580px;
     background-color: gold;
     display:flex;
@@ -21,9 +21,9 @@ export const FormLabel = styled.label `
 `
 export const FormInput = styled.input`
     background-color: blue;
-    max-width: 80%;
+    max-width: 87%;
     margin-left: 40px;
-    margin-top: 50px;
+    margin-top: 20px;
     height: 100px;
     border-radius: 10px;
     font-size: 40px;
@@ -33,6 +33,6 @@ export const FormInput = styled.input`
      &:hover,
     &focus {
         scale:1.1;
-        margin-top: 50px;
+        margin-top: 30px;
     }
 `

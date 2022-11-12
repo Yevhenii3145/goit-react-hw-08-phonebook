@@ -1,11 +1,10 @@
-import { NavLink } from "react-router-dom"
-import styles from '../navbar.module.scss'
+import { NavLink } from "react-router-dom";
 
 export default function NavbarAuth({trowStyle}) {
   return (
     <div>
-        <NavLink className={trowStyle} to="/register">Register</NavLink>
-        <NavLink className={trowStyle} to="/login">Login</NavLink>
+        <NavLink style={{marginRight:"20px", width: "100px"}} className={trowStyle} to="/register">Register</NavLink>
+        <NavLink style={{marginRight:"40px", width: "100px", textAlign: "center"}} className={trowStyle} to="/login">Login</NavLink>
     </div>
-  )
-}
+  );
+};

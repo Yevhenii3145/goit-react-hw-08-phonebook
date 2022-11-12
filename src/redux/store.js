@@ -12,7 +12,7 @@ const persistConfig = {
   whitelist: ["token"]
 };
 
-const persistedReducer = persistReducer(persistConfig, authReducer)
+const persistedReducer = persistReducer(persistConfig, authReducer);
 
 export const store = configureStore({
   reducer: {
@@ -20,6 +20,7 @@ export const store = configureStore({
     contacts: contactReducer,
     filter: filterReducer,
   },
+  
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
         serializableCheck: {

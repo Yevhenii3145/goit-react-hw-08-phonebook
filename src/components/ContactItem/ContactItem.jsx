@@ -1,8 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types';
-import { ContactElement, DeletButton } from './ContacItem.styled'
-import { removeContact } from 'redux/contacts/contacts-operation';
+import React from 'react';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+import { ContactElement, DeletButton } from './ContacItem.styled';
+import { removeContact } from 'redux/contacts/contacts-operation';
+
 
 export default function ContactItem({ name, number, id, text }) {
   const dispatch = useDispatch();
@@ -13,8 +14,8 @@ export default function ContactItem({ name, number, id, text }) {
   return (
     <ContactElement>{name}: {number}<DeletButton onClick={() => { removeOneContact(id) }}>{text}
     </DeletButton></ContactElement>
-  )
-}
+  );
+};
 
 ContactItem.propTypes = {
   name: PropTypes.string.isRequired,

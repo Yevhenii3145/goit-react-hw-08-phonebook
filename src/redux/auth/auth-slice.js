@@ -8,7 +8,7 @@ const initialState = {
     loading: false,
     isLoadingUser: false,
     error: null,
-}
+};
 
 const authSlice = createSlice({
     name: "auth",
@@ -72,7 +72,7 @@ const authSlice = createSlice({
             store.isLoadingUser = false;
             store.error = payload;
         },
-    }
+    },
 });
 
 export default authSlice.reducer;

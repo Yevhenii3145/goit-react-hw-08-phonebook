@@ -13,10 +13,9 @@ export const  signup = createAsyncThunk(
                 status: response.status,
                 message: response.data.message,
             }
-            console.log("gg")
             return rejectWithValue(error);
-        }
-    }
+        };
+    },
 );
 
 export const login = createAsyncThunk(
@@ -31,8 +30,8 @@ export const login = createAsyncThunk(
                 message: response.data.message,
             }
             return rejectWithValue(error);
-        }
-    }
+        };
+    },
 );
 
 export const logout = createAsyncThunk(
@@ -47,9 +46,9 @@ export const logout = createAsyncThunk(
                 message: response.data.message,
             }
             return rejectWithValue(error);
-        }
-    }
-)
+        };
+    },
+);
 
 export const  current = createAsyncThunk(
     "auth/current",
@@ -57,7 +56,6 @@ export const  current = createAsyncThunk(
         try{
             const {auth} = getState();
             const result = await api.getCurrentUser(auth.token);
-            console.log("ffff0000000000",result)
             return result;
         } catch({response}) {
             const error = {
@@ -65,6 +63,6 @@ export const  current = createAsyncThunk(
                 message: response.data.message,
             }
             return rejectWithValue(error);
-        }
-    }
-)
+        };
+    },
+);

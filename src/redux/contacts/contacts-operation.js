@@ -34,9 +34,9 @@ export const addContact = createAsyncThunk(
       const { contacts } = getState();
       if (isDublicate(data, contacts.items)) {
         return alert(`${data.name} is already in contacts`);
-      }
+      };
     },
-  }
+  },
 );
 
 export const removeContact = createAsyncThunk(
@@ -47,6 +47,6 @@ export const removeContact = createAsyncThunk(
       return id;
     } catch (error) {
       return rejectWithValue(error);
-    }
-  }
+    };
+  },
 );

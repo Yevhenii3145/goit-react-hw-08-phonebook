@@ -1,29 +1,31 @@
-import React from 'react';
 import { useMemo } from "react";
+import { useSelector, useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
+
 import { FormMarcup, FormLabel, FirstInput, SecondInput, FormButton } from './Form.styled';
 import useForm from 'shared/hooks/useForm';
 import { addContact, isDublicate } from 'redux/contacts/contacts-operation';
-import { useSelector, useDispatch } from 'react-redux';
 import { getFilteredContacts} from 'redux/contacts/contacts-selectors';
 
 const initialState = {
     name: '',
     number: '',
-}
+};
 
 export default function Form() {
     
     const inputNameId = useMemo(()=> nanoid(), []);
     const inputPhoneId = useMemo(()=> nanoid(), []);
+
     const contacts = useSelector(getFilteredContacts);
     const dispatch = useDispatch ();
 
-
+        
     const onSubmit =  (data) => {
         const action = addContact(data);
+
         if(isDublicate(data,contacts)) {
-          return alert(`${data.name} is already in contacts`);
+          return alert(`${data.name} is already in contacts!`)
         }
         dispatch(action);
     };
@@ -58,5 +60,5 @@ export default function Form() {
             />
             <FormButton type='submit'>Add contact</FormButton>
         </FormMarcup>
-    )
-}
+    );
+};

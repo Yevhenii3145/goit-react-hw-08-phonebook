@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { FilterBox, FormLabel, FormInput } from "./Filter.styled"
-import { useDispatch } from 'react-redux';
 import { setFilter } from 'redux/filter/filter-slice';
 
 
@@ -24,10 +24,10 @@ export default function Filter({ filterId, filter }) {
         onChange={handleChange}
       />
     </FilterBox>
-  )
-}
+  );
+};
 
 Filter.propTypes = {
   filterId: PropTypes.string.isRequired,
   filter: PropTypes.string.isRequired,
-}
+};

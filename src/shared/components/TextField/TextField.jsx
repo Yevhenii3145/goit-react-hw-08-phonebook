@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Input } from '@chakra-ui/react';
 
 import styles from "./text-field.module.css";
 
@@ -7,18 +8,18 @@ const TextField = ({id, label, value, name, handleChange, type, checked, classNa
 
     return (
         <div className={styles.formGroup}>
-            {label && <label htmlFor={id}>{label}</label>}
-            <input id={id} value={value} checked={checked} name={name} onChange={handleChange} type={type} className={fullClassName} placeholder={placeholder} required={required} pattern={pattern} />
+            {label && <label style={{width: "80px", color: "orange"}} htmlFor={id}>{label}</label>}
+            <Input variant='filled'  id={id} value={value} checked={checked} name={name} onChange={handleChange} type={type} className={fullClassName} placeholder={placeholder} required={required} pattern={pattern} />
         </div>
-    )
-}
+    );
+};
 
 export default TextField;
 
 TextField.defaultProps = {
     type: "text",
     required: false,
-}
+};
 
 TextField.propTypes = {
     id: PropTypes.string, 
@@ -31,4 +32,4 @@ TextField.propTypes = {
     placeholder: PropTypes.string,  
     required: PropTypes.bool, 
     pattern: PropTypes.string,
-}
+};

@@ -4,7 +4,7 @@ export const FormMarcup = styled.form`
     outline: 2px solid red;
     position: relative;
     width: 528px;
-    height: 250px;
+    height: 280px;
     padding: 40px;
     background-color: #53c70c;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);

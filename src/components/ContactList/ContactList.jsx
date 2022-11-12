@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import PropTypes from 'prop-types';
-import { ContactsList } from './ContactList.styled'
-import ContactItem from '../ContactItem/ContactItem'
+import { ContactsList } from './ContactList.styled';
+import ContactItem from '../ContactItem/ContactItem';
 
 
 export default function ContactList({items }) {
@@ -16,9 +16,9 @@ export default function ContactList({items }) {
         text={"Delete"}
       />))}
     </ContactsList>
-  )
-}
+  );
+};
 
 ContactList.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape()),
-}
+};
