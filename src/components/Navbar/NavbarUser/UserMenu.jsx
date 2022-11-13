@@ -10,11 +10,13 @@ import { getUser } from "redux/auth/auth-selectors";
 
 export default function UserMenu() {
     const dispatch = useDispatch();
-    const user = useSelector(getUser);
-    
+
+    const user =  useSelector(getUser);
+
     const onLogout = () => {
-        dispatch(logout());
-    }
+      dispatch(logout());
+  }
+   
 
   return (
     <Box 
@@ -25,7 +27,7 @@ export default function UserMenu() {
     py={12}>
       {user && <EmailIcon w={7} h={7} color='green.500' />}
       {user && <Text fontSize='40px' color='tomato' as='b' ml='20px'>{user.email}</Text>}
-      <Button colorScheme='red' ml='40px' mr='40px' onClick={onLogout}>Logout</Button>
+      {user && <Button colorScheme='red' ml='40px' mr='40px' onClick={onLogout}>Logout</Button>}
     </Box>
   );
 };

@@ -17,7 +17,8 @@ const Navbar = () => {
         <Box bg='gold'  className={styles.navbar}>
             <NavLink className={getClassName} to="/">Logo</NavLink>
             {isLogin && <NavLink className={getClassName} to="/contacts">My Contacts</NavLink>}
-            {isLogin ? <UserMenu /> : <NavbarAuth trowStyle={getClassName} />}
+            {isLogin && <UserMenu /> }
+            {!isLogin && <NavbarAuth trowStyle={getClassName} />}
         </Box>
     );
 };

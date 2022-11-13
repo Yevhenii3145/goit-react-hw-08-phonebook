@@ -1,8 +1,6 @@
 import { Box, Heading,Text   } from '@chakra-ui/react';
-import useAuth from 'shared/hooks/useAuth';
 
 const MainPage = () => {
-  const isLogin = useAuth();
     return (
         <Box w='1200px' ml='auto' mr='auto' >
         <Heading 
