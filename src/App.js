@@ -39,7 +39,7 @@ export default function App() {
         {isLoadingUser ? <Progress colorScheme='green' height='32px' value={20} /> : (
           <>
           <ChakraProvider theme={theme}>
-            <Navbar />
+          <Navbar />
             <UserRoutes />
           </ChakraProvider>
           </>

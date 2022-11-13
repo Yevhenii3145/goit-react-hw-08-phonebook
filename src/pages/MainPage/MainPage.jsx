@@ -42,6 +42,7 @@ const MainPage = () => {
       Namespaces are one honking great idea -- let's  do more </Text> of those!<br/>
       </Text>
     </Box>
+  
     );
   };
   
