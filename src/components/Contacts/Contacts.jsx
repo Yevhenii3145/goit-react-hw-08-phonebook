@@ -11,7 +11,7 @@ import { Heading } from '../../components/Heading/Heading';
 import { getFilter } from 'redux/filter/filter-selectors';
 import {getState, getFilteredContacts,} from 'redux/contacts/contacts-selectors';
 import { fetchContacts } from 'redux/contacts/contacts-operation';
-
+import useAuth from 'shared/hooks/useAuth';
 
 const Contacts = () => {
     const contacts = useSelector(getFilteredContacts);
@@ -19,11 +19,14 @@ const Contacts = () => {
     const filter = useSelector(getFilter);
     const filterId = nanoid();
     const dispatch = useDispatch();
-  
+    const isLogin = useAuth();
     
     useEffect(() => {
+      if(!isLogin) {
+        return;
+      }
       dispatch(fetchContacts());
-    }, [dispatch]);
+    }, [isLogin,dispatch]);
     
     return (
     <>

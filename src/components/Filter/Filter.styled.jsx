@@ -6,11 +6,12 @@ export const FilterBox = styled.div`
     right: 0px;
     outline: 2px solid green;
     height:280px;
-    width: 580px;
+
     background-color: gold;
     display:flex;
     flex-direction: column;
     border-radius: 4px;
+    max-width: 45%;
 `
 export const FormLabel = styled.label `
     text-align: center;
@@ -21,7 +22,7 @@ export const FormLabel = styled.label `
 `
 export const FormInput = styled.input`
     background-color: blue;
-    max-width: 87%;
+    max-width: 85%;
     margin-left: 40px;
     margin-top: 20px;
     height: 100px;
@@ -34,5 +35,7 @@ export const FormInput = styled.input`
     &focus {
         scale:1.1;
         margin-top: 30px;
+        margin-right: 15px;
+        /* margin-left: 20px; */
     }
 `

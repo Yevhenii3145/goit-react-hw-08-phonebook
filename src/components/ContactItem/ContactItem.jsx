@@ -7,10 +7,12 @@ import { removeContact } from 'redux/contacts/contacts-operation';
 
 export default function ContactItem({ name, number, id, text }) {
   const dispatch = useDispatch();
+
   const removeOneContact = id => {
     const action = removeContact(id);
     dispatch(action);
   };
+  
   return (
     <ContactElement>{name}: {number}<DeletButton onClick={() => { removeOneContact(id) }}>{text}
     </DeletButton></ContactElement>

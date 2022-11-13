@@ -3,7 +3,6 @@ import styled from '@emotion/styled'
 export const FormMarcup = styled.form`
     outline: 2px solid red;
     position: relative;
-    width: 528px;
     height: 280px;
     padding: 40px;
     background-color: #53c70c;
@@ -11,11 +10,13 @@ export const FormMarcup = styled.form`
     border-radius: 4px;
     display: flex;
     flex-direction:column;
+    max-width: 45%;
 `
 export const FormLabel = styled.label`
     color: white;
 `
 export const FirstInput = styled.input`
+    max-width: 100%;
     background-color: #ffbb32;
     height: 70px;
     border-radius: 10px;
@@ -31,6 +32,7 @@ export const FirstInput = styled.input`
     }
 `
 export const SecondInput = styled.input`
+    max-width: 100%;
     background-color: #296cf1;
     height: 70px;
     border-radius: 10px;

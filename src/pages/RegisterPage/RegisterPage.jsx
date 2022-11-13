@@ -10,6 +10,7 @@ import RegisterForm from '../../components/RegisterForm/RegisterForm';
 export default function RegisterPage() {
     const dispatch = useDispatch();
     const isUserLogin = useSelector(isLogin);
+    
     const onRegister = (data) => {
         dispatch(signup(data));
     };
